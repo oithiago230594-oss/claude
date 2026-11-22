@@ -1,0 +1,45 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+
+    function isMember(hid) {
+      return signedIn() &&
+        request.auth.uid in get(/databases/$(database)/documents/households/$(hid)).data.memberIds;
+    }
+
+    // Perfil de cada usuário: só ele lê/escreve.
+    match /users/{uid} {
+      allow read, write: if signedIn() && request.auth.uid == uid;
+    }
+
+    // Código de convite: só dá para consultar um código que você já conhece (get), nunca listar.
+    match /invites/{code} {
+      allow get: if signedIn();
+      allow create: if signedIn();
+      allow list, update, delete: if false;
+    }
+
+    match /households/{hid} {
+      allow create: if signedIn() && request.resource.data.memberIds == [request.auth.uid];
+      allow read: if signedIn() && request.auth.uid in resource.data.memberIds;
+
+      allow update: if signedIn() && (
+        // membros podem editar (ex.: dia de início do ciclo)
+        request.auth.uid in resource.data.memberIds ||
+        // entrar no casal: só adicionando a si mesmo, e só se ainda houver vaga (máx. 2)
+        (resource.data.memberIds.size() == 1 &&
+         request.resource.data.memberIds == resource.data.memberIds.concat([request.auth.uid]) &&
+         request.resource.data.diff(resource.data).affectedKeys().hasOnly(['memberIds', 'names']))
+      );
+
+      match /cycles/{cycleId} {
+        allow read, write: if isMember(hid);
+      }
+      match /expenses/{expenseId} {
+        allow read, write: if isMember(hid);
+      }
+    }
+  }
+}
