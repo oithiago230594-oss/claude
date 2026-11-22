@@ -92,7 +92,7 @@ fun AuthScaffold(title: String, subtitle: String, content: @Composable ColumnSco
                 Box(Modifier.size(56.dp).clip(CircleShape).background(androidx.compose.ui.graphics.Color.White.copy(alpha = 0.2f)), contentAlignment = Alignment.Center) {
                     Icon(Icons.Rounded.Favorite, null, tint = androidx.compose.ui.graphics.Color.White, modifier = Modifier.size(30.dp))
                 }
-                Text("Finanças do Casal", style = MaterialTheme.typography.headlineMedium, color = androidx.compose.ui.graphics.Color.White)
+                Text("Controle de gastos pessoais família Lopes", style = MaterialTheme.typography.headlineMedium, color = androidx.compose.ui.graphics.Color.White)
                 Text("Juntos no mesmo orçamento", style = MaterialTheme.typography.bodyLarge, color = androidx.compose.ui.graphics.Color.White.copy(alpha = 0.85f))
             }
         }

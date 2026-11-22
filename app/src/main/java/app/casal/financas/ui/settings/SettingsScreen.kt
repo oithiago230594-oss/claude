@@ -21,7 +21,7 @@ import app.casal.financas.ui.components.personColor
 fun shareInvite(context: android.content.Context, code: String) {
     val send = Intent(Intent.ACTION_SEND).apply {
         type = "text/plain"
-        putExtra(Intent.EXTRA_TEXT, "Vamos controlar nossas finanças juntos! Baixe o app Finanças do Casal, crie sua conta e use o código: $code")
+        putExtra(Intent.EXTRA_TEXT, "Vamos controlar nossas finanças juntos! Baixe o app Controle de gastos pessoais família Lopes, crie sua conta e use o código: $code")
     }
     context.startActivity(Intent.createChooser(send, "Enviar convite"))
 }

@@ -1,4 +1,4 @@
-# Finanças do Casal
+# Controle de gastos pessoais família Lopes
 
 App Android (Kotlin + Jetpack Compose) para o casal controlar o orçamento do ciclo.
 Cada um usa o seu celular; tudo sincroniza **em tempo real pela internet** (Firebase Firestore).

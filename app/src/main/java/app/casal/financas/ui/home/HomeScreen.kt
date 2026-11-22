@@ -48,8 +48,8 @@ fun HomeScreen(
             item {
                 Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                     Column(Modifier.weight(1f)) {
-                        Text("Finanças do Casal", style = MaterialTheme.typography.titleLarge)
-                        Text("Atualizado em tempo real", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Text("Família Lopes", style = MaterialTheme.typography.titleLarge)
+                        Text("Controle de gastos pessoais · tempo real", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
                     SyncChip(state.sync)
                 }
