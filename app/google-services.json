@@ -1,16 +1,28 @@
 {
   "project_info": {
-    "project_number": "000000000000",
-    "project_id": "SUBSTITUA-PELO-SEU-PROJETO",
-    "storage_bucket": "SUBSTITUA-PELO-SEU-PROJETO.appspot.com"
+    "project_number": "1018331586293",
+    "project_id": "gastos-f007b",
+    "storage_bucket": "gastos-f007b.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:000000000000:android:0000000000000000",
-        "android_client_info": { "package_name": "app.casal.financas" }
+        "mobilesdk_app_id": "1:1018331586293:android:9f638e6889e1aa8506afbc",
+        "android_client_info": {
+          "package_name": "app.casal.financas"
+        }
       },
-      "api_key": [{ "current_key": "SUBSTITUA-PELA-SUA-CHAVE" }]
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQbbL047GWz4RNKMM6QLCp2s-a8FULQ-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
     }
   ],
   "configuration_version": "1"
